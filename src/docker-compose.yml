@@ -1,0 +1,10 @@
+version: '3.4'
+#in docker compose file we define all services that will be deployed in docker enviroment 
+#and every service have its own docker file 
+#here we specify the image and path to the docker file
+services:
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
